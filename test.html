@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>LAWGQT</title>
+  <!-- LayUI的核心CSS文件 -->
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">Welcome to LAWGQT</div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        LAWGQT
+      </li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">Deutsches Grundgesetz</a>
+        </li>
+        <li class="layui-nav-item"><a href="javascript:;"></a></li>
+        <li class="layui-nav-item"><a href="javascript:;"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote layui-text" id="Question">
+        Here shows the Question 
+      </blockquote>
+      <div class="layui-card layui-panel">
+        <div class="layui-card-header">
+        law GQT
+        </div>
+        <div class="layui-card-body" id="Answers">
+        Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>
+        Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>Answers<br>
+        END
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    <div class="layui-row">
+      <div class="layui-col-xs10">
+        <input type="text" name="Question"  lay-reqtext="Question" class="layui-input demo-phone" id="inputQuestion">
+      </div>
+      <div class="layui-col-xs2">
+        <div class="layui-btn-container">
+          <button type="button" class="layui-btn layui-btn-fluid" id="askButton">
+            Ask it
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<script src="./layui/layui.js"></script>
+<script>
+//JS 
+//底部组件事件(记录输入框输入，更改头部引用内容)
+  layui.use('form', function () {
+          var form = layui.form;
+
+          // 监听按钮点击事件
+          $('#askButton').on('click', function () {
+            // 获取输入框的值
+              var questionValue = $('#inputQuestion').val();
+
+              $('#Question').text(questionValue);
+              $('#Answers').text("My answer is nothing")
+
+              //在这里可以进行相应的处理，例如提交到后台或进行其他逻辑操作
+              console.log('问题内容：', questionValue);
+          });
+      });
+
+//左边菜单事件(手动加载数据)
+
+</script>
+</body>
+</html>
